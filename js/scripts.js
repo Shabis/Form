@@ -1,25 +1,20 @@
 $(document).ready(function() {
-  $("button#dog").click(function() {
-    $("ul#user").prepend("<li>Woof! Woof!</li>");
-    $("ul#webpage").prepend("<li>Good Choice</li>");
-    $("li").click(function() {
-      alert('Go Team Doggidy Dog');
-      $(this).remove();
-    });
+  $('#blanks form').submit(function(event) {
+      var person1Input = $("input#person1").val();
+      var person2Input = $("input#person2").val();
+      var animalInput = $("input#animal").val();
+      var exclamationInput = $("input#exclamation").val();
+      var verbInput = $("input#verb").val();
+      var nounInput = $("input#noun").val();
+      $('.person1').append(person1Input);
+      $('.person2').append(person2Input);
+      $('.animal').append(animalInput);
+      $('.exclamation').append(exclamationInput);
+      $('.verb').append(verbInput);
+      $('.noun').append(nounInput);
 
-    });
-  $("button#cat").click(function() {
-    $("ul#user").prepend("<li>meaaarrr</li>");
-    $("ul#webpage").prepend("<li>User Error 404: Please try again</li>");
-    $("li").click(function() {
-      alert('Cat lover? Enough said');
-    });
-    });
-  $("button#critter").click(function() {
-    $("ul#user").prepend("<li>Baaaaaa</li>");
-    $("ul#webpage").prepend("<li>Go find a real pet</li>");
-    $("li").click(function() {
-      alert('I could really use a sweater');
-    });
-      });
+      $('#story').show();
+
+      event.preventDefault();
+  });
 });
